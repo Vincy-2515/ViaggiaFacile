@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --page-background-color: #0f172a;
+    --section-background-color: #1e293b;
+    --primary-text-color: #f8fafc;
+    --secondary-text-color: #cbd5e1;
+    --primary-color: #f59e0b;
+    --primary-color-hover: #d97706;
+    --border-color: #334155;
+    --table-row-alternate-color: #1e293b;
+    --table-row-base-color: #151f32;
+    --main-font-family: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--page-background-color);
+    color: var(--primary-text-color);
+    font-family: var(--main-font-family);
+    line-height: 1.6;
+    padding: 40px 20px;
+}
+
+.main-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.main-header {
+    text-align: center;
+    margin-bottom: 50px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 30px;
+}
+
+.main-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.main-subtitle {
+    font-size: 1.2rem;
+    color: var(--secondary-text-color);
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.project-authors {
+    font-size: 1rem;
+    color: var(--secondary-text-color);
+    font-style: italic;
+}
+
+.content-section {
+    background-color: var(--section-background-color);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    padding: 35px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.table-title {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.standard-table-container {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--table-row-base-color);
+    margin-bottom: 30px;
+}
+
+.project-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.project-table th {
+    background-color: var(--primary-color);
+    color: #000000;
+    font-weight: 600;
+    padding: 14px 18px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.project-table td {
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+.project-table tbody tr:nth-child(even) {
+    background-color: var(--table-row-alternate-color);
+}
+
+.project-table tbody tr:nth-child(odd) {
+    background-color: var(--table-row-base-color);
+}
+
+.project-table tbody tr:hover {
+    background-color: rgba(245, 158, 11, 0.05);
+}
+
+.charter-label-cell {
+    font-weight: 600;
+    color: var(--primary-color);
+    width: 250px;
+    background-color: rgba(15, 23, 42, 0.3);
+}
+
+.wbs-collapsible-container {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--table-row-base-color);
+    padding: 15px;
+}
+
+.wbs-details-root {
+    width: 100%;
+}
+
+.wbs-summary-root {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    padding: 12px 15px;
+    background-color: rgba(245, 158, 11, 0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    list-style: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s;
+}
+
+.wbs-summary-root::-webkit-details-marker {
+    display: none;
+}
+
+.wbs-summary-root::before {
+    content: "▼";
+    font-size: 0.9rem;
+    transition: transform 0.2s;
+}
+
+.wbs-details-root[open] > .wbs-summary-root::before {
+    transform: rotate(0deg);
+}
+
+.wbs-details-root:not([open]) > .wbs-summary-root::before {
+    transform: rotate(-90deg);
+}
+
+.wbs-summary-root:hover {
+    background-color: rgba(245, 158, 11, 0.15);
+}
+
+.wbs-subcategory-container {
+    padding: 15px 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.wbs-details-sub {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.wbs-summary-sub {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-text-color);
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.03);
+    cursor: pointer;
+    list-style: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s;
+}
+
+.wbs-summary-sub::-webkit-details-marker {
+    display: none;
+}
+
+.wbs-summary-sub::before {
+    content: "▶";
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    transition: transform 0.2s;
+}
+
+.wbs-details-sub[open] > .wbs-summary-sub::before {
+    transform: rotate(90deg);
+}
+
+.wbs-details-sub:not([open]) > .wbs-summary-sub::before {
+    transform: rotate(0deg);
+}
+
+.wbs-summary-sub:hover {
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+.wbs-item-list {
+    list-style: none;
+    padding: 10px 15px;
+    background-color: var(--table-row-alternate-color);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.wbs-item {
+    font-size: 0.95rem;
+    color: var(--secondary-text-color);
+    padding: 8px 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    transition: background-color 0.2s;
+}
+
+.wbs-item:hover {
+    background-color: rgba(245, 158, 11, 0.04);
+    color: var(--primary-text-color);
+}
+
+.wbs-item-code {
+    font-family: monospace;
+    font-weight: 600;
+    color: var(--primary-color);
+    flex-shrink: 0;
+    width: 60px;
+}
+
+.use-case-diagram-container {
+    text-align: center;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 30px;
+    overflow: hidden;
+}
+
+.diagram-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
+}
+
+.button-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background-color: var(--primary-color);
+    color: #000000;
+    font-family: var(--main-font-family);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 8px;
+    transition: background-color 0.2s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.button-link:hover {
+    background-color: var(--primary-color-hover);
+    transform: translateY(-2px);
+}
+
+.button-link:active {
+    transform: translateY(0);
+}
+
+.button-link-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    margin-left: 15px;
+}
+
+.button-link-secondary:hover {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--primary-text-color);
+}
+
+.button-icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.download-section {
+    text-align: center;
+    padding: 40px;
+}
+
+.download-text {
+    margin-bottom: 20px;
+    color: var(--secondary-text-color);
+    font-size: 1.1rem;
+}
+
+.mermaid-diagram-container {
+    background-color: #1e293b;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    overflow-x: auto;
+    margin-top: 25px;
+}
+
+.action-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.benefits-bullet-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.benefits-bullet-list li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.benefits-bullet-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
